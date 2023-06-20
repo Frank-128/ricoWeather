@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-494_twl8iu*@%y03##(9_8!=+4^y(c4yrb(o*+_*lg!0^26@h#
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
+  'localhost',
+  'ricoweather-a8c41047c4c8.herokuapp.com'  
 ]
 
 
