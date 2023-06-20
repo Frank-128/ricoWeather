@@ -1,0 +1,100 @@
+2023-06-20T11:04:08.952616+00:00 app[web.1]: mod = importlib.import_module(module)
+2023-06-20T11:04:08.952616+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:08.952617+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2023-06-20T11:04:08.952617+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-06-20T11:04:08.952617+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:08.952618+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:08.952618+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:08.952618+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked
+2023-06-20T11:04:08.952618+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2023-06-20T11:04:08.952618+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:08.952620+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:08.952620+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+2023-06-20T11:04:08.952620+00:00 app[web.1]: ModuleNotFoundError: No module named 'ricoweather'
+2023-06-20T11:04:08.952678+00:00 app[web.1]: [2023-06-20 11:04:08 +0000] [7] [INFO] Worker exiting (pid: 7)
+2023-06-20T11:04:08.977967+00:00 app[web.1]: [2023-06-20 11:04:08 +0000] [2] [INFO] Shutting down: Master
+2023-06-20T11:04:08.978003+00:00 app[web.1]: [2023-06-20 11:04:08 +0000] [2] [INFO] Reason: Worker failed to boot.
+2023-06-20T11:04:09.000000+00:00 app[api]: Build succeeded
+2023-06-20T11:04:09.127437+00:00 heroku[web.1]: Process exited with status 3
+2023-06-20T11:04:09.160250+00:00 heroku[web.1]: State changed from starting to crashed
+2023-06-20T11:04:09.164779+00:00 heroku[web.1]: State changed from crashed to starting
+2023-06-20T11:04:12.223947+00:00 heroku[web.1]: Starting process with command `gunicorn ricoweather.wsgi --log-file -`
+2023-06-20T11:04:12.973058+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [2] [INFO] Starting gunicorn 20.1.0
+2023-06-20T11:04:12.973315+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [2] [INFO] Listening at: http://0.0.0.0:46249 (2)
+2023-06-20T11:04:12.973338+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [2] [INFO] Using worker: sync
+2023-06-20T11:04:12.975180+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [7] [INFO] Booting worker with pid: 7
+2023-06-20T11:04:12.977747+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [7] [ERROR] Exception in worker process
+2023-06-20T11:04:12.977748+00:00 app[web.1]: Traceback (most recent call last):
+2023-06-20T11:04:12.977767+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2023-06-20T11:04:12.977768+00:00 app[web.1]: worker.init_process()
+2023-06-20T11:04:12.977768+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2023-06-20T11:04:12.977768+00:00 app[web.1]: self.load_wsgi()
+2023-06-20T11:04:12.977769+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2023-06-20T11:04:12.977769+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2023-06-20T11:04:12.977769+00:00 app[web.1]: ^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.977769+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2023-06-20T11:04:12.977769+00:00 app[web.1]: self.callable = self.load()
+2023-06-20T11:04:12.977769+00:00 app[web.1]: ^^^^^^^^^^^
+2023-06-20T11:04:12.977769+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2023-06-20T11:04:12.977769+00:00 app[web.1]: return self.load_wsgiapp()
+2023-06-20T11:04:12.977770+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.977770+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2023-06-20T11:04:12.977770+00:00 app[web.1]: return util.import_app(self.app_uri)
+2023-06-20T11:04:12.977770+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.977770+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/util.py", line 359, in import_app
+2023-06-20T11:04:12.977770+00:00 app[web.1]: mod = importlib.import_module(module)
+2023-06-20T11:04:12.977770+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.977771+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2023-06-20T11:04:12.977771+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-06-20T11:04:12.977771+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.977771+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:12.977772+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:12.977772+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked
+2023-06-20T11:04:12.977772+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2023-06-20T11:04:12.977772+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:12.977772+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:12.977773+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+2023-06-20T11:04:12.977773+00:00 app[web.1]: ModuleNotFoundError: No module named 'ricoweather'
+2023-06-20T11:04:12.977816+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [7] [INFO] Worker exiting (pid: 7)
+2023-06-20T11:04:12.979158+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [8] [INFO] Booting worker with pid: 8
+2023-06-20T11:04:12.981526+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [8] [ERROR] Exception in worker process
+2023-06-20T11:04:12.981527+00:00 app[web.1]: Traceback (most recent call last):
+2023-06-20T11:04:12.981527+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2023-06-20T11:04:12.981527+00:00 app[web.1]: worker.init_process()
+2023-06-20T11:04:12.981527+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2023-06-20T11:04:12.981528+00:00 app[web.1]: self.load_wsgi()
+2023-06-20T11:04:12.981528+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2023-06-20T11:04:12.981528+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2023-06-20T11:04:12.981528+00:00 app[web.1]: ^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.981528+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2023-06-20T11:04:12.981528+00:00 app[web.1]: self.callable = self.load()
+2023-06-20T11:04:12.981529+00:00 app[web.1]: ^^^^^^^^^^^
+2023-06-20T11:04:12.981529+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2023-06-20T11:04:12.981529+00:00 app[web.1]: return self.load_wsgiapp()
+2023-06-20T11:04:12.981529+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.981529+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2023-06-20T11:04:12.981529+00:00 app[web.1]: return util.import_app(self.app_uri)
+2023-06-20T11:04:12.981529+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.981529+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/site-packages/gunicorn/util.py", line 359, in import_app
+2023-06-20T11:04:12.981530+00:00 app[web.1]: mod = importlib.import_module(module)
+2023-06-20T11:04:12.981530+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.981530+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2023-06-20T11:04:12.981530+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2023-06-20T11:04:12.981530+00:00 app[web.1]: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1126, in _find_and_load_unlocked
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+2023-06-20T11:04:12.981531+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+2023-06-20T11:04:12.981532+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1140, in _find_and_load_unlocked
+2023-06-20T11:04:12.981532+00:00 app[web.1]: ModuleNotFoundError: No module named 'ricoweather'
+2023-06-20T11:04:12.981589+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [8] [INFO] Worker exiting (pid: 8)
+2023-06-20T11:04:12.999839+00:00 app[web.1]: [2023-06-20 11:04:12 +0000] [2] [WARNING] Worker with pid 8 was terminated due to signal 15
+2023-06-20T11:04:13.098989+00:00 app[web.1]: [2023-06-20 11:04:13 +0000] [2] [INFO] Shutting down: Master
+2023-06-20T11:04:13.099023+00:00 app[web.1]: [2023-06-20 11:04:13 +0000] [2] [INFO] Reason: Worker failed to boot.
+2023-06-20T11:04:13.245562+00:00 heroku[web.1]: Process exited with status 3
+2023-06-20T11:04:13.276957+00:00 heroku[web.1]: State changed from starting to crashed
+2023-06-20T11:04:18.179271+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=ricoweather-0bd5c50233e0.herokuapp.com request_id=ca02c557-736e-408b-b6b0-0442724cb7ae fwd="41.222.179.130" dyno= connect= service= status=503 bytes= protocol=https
+2023-06-20T11:04:18.703794+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=ricoweather-0bd5c50233e0.herokuapp.com request_id=95d7e779-e1b6-4d48-bebd-a5f4ad759293 fwd="41.222.179.130" dyno= connect= service= status=503 bytes= protocol=https
+2023-06-20T11:06:29.675843+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=ricoweather-0bd5c50233e0.herokuapp.com request_id=4d9e655a-19ad-4bb7-92f8-59bbfb25d6e2 fwd="41.222.179.130" dyno= connect= service= status=503 bytes= protocol=https
